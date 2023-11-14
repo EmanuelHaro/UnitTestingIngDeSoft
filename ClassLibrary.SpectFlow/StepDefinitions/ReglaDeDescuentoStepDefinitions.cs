@@ -29,7 +29,7 @@ namespace ClassLibrary.SpectFlow.StepDefinitions
         [Then(@"El sistema muestra la excepción ""([^""]*)""")]
         public void ThenElSistemaMuestraLaExcepcion(string p0)
         {
-            throw new PendingStepException();
+            reglaDeDescuento.First().AplicarDescuento();
         }
 
         [Then(@"El sistema devuelve el valor (.*)")]

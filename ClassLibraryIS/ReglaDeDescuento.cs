@@ -19,8 +19,6 @@ namespace ClassLibraryIS
             Descuento = _Descuento;
         }
 
-
-
         public double AplicarDescuento()
         {
             throw new NotImplementedException();
