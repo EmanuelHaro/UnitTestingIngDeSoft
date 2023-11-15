@@ -25,5 +25,49 @@ namespace ClassLibraryIS.Test
             Assert.AreEqual(mensaje, "El total debe ser mayor a 0");
             //teardown
         }
+
+        public void TotalIntroducidoIgualA6000()
+        {
+            double resultado = 0;
+            string mensaje = "";
+            //setup
+            ReglaDeDescuento regla = new ReglaDeDescuento();
+            //execute
+            try
+            {
+                 resultado = regla.Calcular(6000);
+            }
+            catch (Exception ex)
+            {
+                mensaje = ex.Message;
+            }
+
+            //assert
+            Assert.AreEqual(resultado, "180");
+            //teardown
+        }
+
+        public void TotalIntroducidoIgualA12000()
+        {
+            double resultado = 0;
+            string mensaje = "";
+            //setup
+            ReglaDeDescuento regla = new ReglaDeDescuento();
+            //execute
+            try
+            {
+                resultado = regla.Calcular(12000);
+            }
+            catch (Exception ex)
+            {
+                mensaje = ex.Message;
+            }
+
+            //assert
+            Assert.AreEqual(resultado, "600");
+            //teardown
+        }
+
+
     }
 }
