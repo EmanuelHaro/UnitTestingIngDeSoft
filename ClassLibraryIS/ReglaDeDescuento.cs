@@ -8,20 +8,30 @@ namespace ClassLibraryIS
 {
     public class ReglaDeDescuento
     {
-        public float TotalInicial { get; set; }
-        public float TotalFinal { get; set; }
-        public double Descuento { get; set; }
 
-        public ReglaDeDescuento(float _TotalInicial, float _TotalFinal, double _Descuento)
-        {
-            TotalInicial = _TotalInicial;
-            TotalFinal = _TotalFinal;
-            Descuento = _Descuento;
-        }
+        private double porcentajeMenor = 0.03d;
+        private double porcentajeIntermedio = 0.05d;
+        private double porcentajeMayor = 0.10d;
 
-        public double AplicarDescuento()
+
+        public double Calcular(double total)
         {
-            throw new NotImplementedException();
+            if (total <= 0)
+                throw new Exception("El total debe ser mayor a 0");
+
+            if (total > 5000 && total <= 10000)
+            {
+                return total * porcentajeMenor;
+            }
+            if (total > 10000 && total <= 25000)
+            {
+                return total * porcentajeIntermedio;
+            }
+            else if (total > 25000)
+            {
+                return total * porcentajeMayor;
+            }
+            return 0;
         }
     }
 }
